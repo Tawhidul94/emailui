@@ -1,0 +1,8 @@
+<p>moreless works!</p>
+<span *ngIf = "text.length <= wordLimit">{{text}}</span>
+<span *ngIf="text.length > wordLimit && !showmore">
+  {{text.substring(0,wordLimit)}} ....<span class=" hand" (click)="showmore = true">show more</span>
+</span>
+<span *ngIf="text.length > wordLimit && showmore">
+  {{text}}<span class=" hand" (click)="showmore = false">  show less</span>
+</span>
